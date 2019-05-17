@@ -31,29 +31,6 @@ class Level(pygame.sprite.Sprite):
         self.walls.draw(screen)
         self.messages.draw(screen)
 
-    def save(self):
-        for e in self.enemies:
-            e.save()
-        for f in self.floor:
-            f.save()
-        for w in self.walls:
-            w.save()
-        for m in self.messages:
-            m.save()
-        self.player = None
-
-    def load(self, player):
-        for e in self.enemies:
-            e.load(self)
-        for f in self.floor:
-            f.load()
-        for w in self.walls:
-            w.load()
-        for m in self.messages:
-            m.load()
-        self.player = player
-
-
 class RandomLevel(Level):
     def __init__(self, player, images, mult, enemy_num):
         super().__init__(player)
