@@ -14,12 +14,6 @@ class Tile(pygame.sprite.Sprite):
     def scroll(self, change):
         self.rect.move_ip(change)
 
-    def save(self):
-        self.image = None
-
-    def load(self):
-        self.image = pygame.image.load(self.path)
-
 
 class Door(Tile):
     def __init__(self, images, pos, unlocked):
@@ -29,9 +23,6 @@ class Door(Tile):
 
     def unlock(self):
         self.unlocked = True
-        self.image = pygame.image.load(self.images[self.unlocked])
-
-    def load(self):
         self.image = pygame.image.load(self.images[self.unlocked])
 
 

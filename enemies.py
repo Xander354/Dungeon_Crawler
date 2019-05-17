@@ -47,14 +47,3 @@ class Enemy(pygame.sprite.Sprite):
                 if len(self.level.enemies) == 0 and not self.level.exit.unlocked:
                     self.level.exit.unlock()
                 return True
-
-    def save(self):
-        self.image = None
-        self.level = None
-        self.heading = [self.movement[0], self.movement[1]]
-        self.movement = None
-
-    def load(self, level):
-        self.image = pygame.image.load(self.path)
-        self.level = level
-        self.movement = pygame.math.Vector2(self.heading[0], self.heading[1])

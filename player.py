@@ -84,11 +84,3 @@ class Player(pygame.sprite.Sprite):
 
     def change_y(self, change):
         self.movement[1] = change
-
-    def save(self):
-        self.image = None
-        self.level = None
-        self.enemies = None
-
-    def load(self):
-        self.image = pygame.image.load(self.path)
